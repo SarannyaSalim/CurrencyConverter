@@ -24,7 +24,7 @@ final class ParserHelper {
             
             UserDefaults.standard.set(rateDict.date, forKey: "lastUpdatedDate")
             
-            var finalRates : [ConvertedRate] = rateDict.rates.compactMap({ConvertedRate(currencyName: $0.key, rate: $0.value)})
+            var finalRates : [ConvertedRate] = rateDict.rates
             finalRates.sort(by: <)
             completion(Result.success(finalRates))
             
